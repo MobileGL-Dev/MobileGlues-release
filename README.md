@@ -10,7 +10,7 @@
 >
 > The latest version:
 >
-> **1.2.2**
+> **1.2.3**
 >
 > See [Releases](https://github.com/MobileGL-Dev/MobileGlues-release/releases)
 
