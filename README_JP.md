@@ -8,7 +8,7 @@
 >
 > 最新バージョン:
 >
-> **1.2.4**
+> **1.2.5**
 >
 > [リリース](https://github.com/MobileGL-Dev/MobileGlues-release/releases)を参照してください。
 
