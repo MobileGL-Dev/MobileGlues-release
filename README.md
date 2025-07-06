@@ -6,7 +6,7 @@
 
 **Language**: [简体中文](README_CN.md) | [繁體中文](README_CHT.md) | [日本語](README_JP.md)
 
-<a href="https://www.buymeacoffee.com/Swung0x48"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=Swung0x48&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
+<a href="https://www.buymeacoffee.com/Swung0x48" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 > [!NOTE]
 >
