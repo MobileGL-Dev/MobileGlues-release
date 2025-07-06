@@ -6,6 +6,8 @@
 
 **Language**: [简体中文](README_CN.md) | [繁體中文](README_CHT.md) | [日本語](README_JP.md)
 
+<a href="https://www.buymeacoffee.com/Swung0x48"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=Swung0x48&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
+
 > [!NOTE]
 >
 > The latest version:
