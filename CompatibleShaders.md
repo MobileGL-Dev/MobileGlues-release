@@ -1,5 +1,11 @@
 <!-- markdownlint-disable MD033 -->
 
+> [!WARNING]
+> 
+> ⚠️ **Disclaimer:** This compatibility list is based on testing conducted on **March 14, 2025**.  
+> Shader packs and rendering engines (Iris/Sodium) are frequently updated — as a result, **some information listed above may no longer be accurate**.  
+> Please verify shader functionality using the latest versions before relying on this list.
+
 # Compatible Shaders
 
 |             **Shader**              | **Compatibility** | **Path Tracing** | **Realtime Shadows** | **Water Reflections** | **PBR Textures** |                   **Requirements**                    |                                           **Notes**                                           |
