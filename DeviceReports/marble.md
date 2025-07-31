@@ -31,9 +31,9 @@
 | RyoamicLights               | ✅(0.2.11)                 |
 | TouchController             | ✅(0.1.5)                  |
 | Physics Mod Pro             | ✅(v172b)                  |
-| Distant Horizons            | ✅(2.3.0-b, 需启用 ANGLE)   |
+| Distant Horizons            | ✅(2.3.0-b, 需启用 ANGLE)  |
 | Modern UI                   | ✅(3.11.1.9)               |
-| Immersive Portals Continued | \*️⃣(6.0.7, 无法渲染传送门)   |
+| Immersive Portals Continued | \*️⃣(6.0.7, 无法渲染传送门) |
 
 ## Shaderpack compatibility
 
