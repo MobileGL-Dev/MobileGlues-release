@@ -73,14 +73,18 @@ We need your help to test the compatibility of shaders and mods, and a broad var
 
 # Third party components
 
-**SPIRV-Cross** by **KhronosGroup**: [github](https://github.com/KhronosGroup/SPIRV-Cross)
+**SPIRV-Cross** by **KhronosGroup** - [Apache License 2.0](https://github.com/KhronosGroup/SPIRV-Cross/blob/master/LICENSE): [github](https://github.com/KhronosGroup/SPIRV-Cross)
 
-**glslang** by **KhronosGroup**: [github](https://github.com/KhronosGroup/glslang)
+**glslang** by **KhronosGroup** - [Various Licenses](https://github.com/KhronosGroup/glslang/blob/main/LICENSE.txt): [github](https://github.com/KhronosGroup/glslang)
 
-**GlslOptimizerV2** by **aiekick**: [github](https://github.com/aiekick/GlslOptimizerV2)
+**GlslOptimizerV2** by **aiekick** - [Apache License 2.0](https://github.com/aiekick/GlslOptimizerV2/blob/master/LICENSE): [github](https://github.com/aiekick/GlslOptimizerV2)
 
-**cJSON** by **DaveGamble**: [github](https://github.com/DaveGamble/cJSON)
+**cJSON** by **DaveGamble** - [MIT License](https://github.com/DaveGamble/cJSON/blob/master/LICENSE): [github](https://github.com/DaveGamble/cJSON)
 
-**Gson** by **Google**: [github](https://github.com/google/gson)
+**OpenGL Mathematics (*GLM*)** by **G-Truc Creation** - [The Happy Bunny License](https://github.com/g-truc/glm/blob/master/copying.txt): [github](https://github.com/g-truc/glm)
 
-**AndroidX Activity Compose** by **Android Open Source Project (AOSP)**: [Android Developers](https://developer.android.com/jetpack/androidx/releases/activity)
+**FidelityFX-FSR** by **AMD** - [MIT License](https://github.com/GPUOpen-Effects/FidelityFX-FSR/blob/master/license.txt): [github](https://github.com/GPUOpen-Effects/FidelityFX-FSR) 
+
+**Gson** by **Google** - [Apache License 2.0](https://github.com/google/gson/blob/master/LICENSE): [github](https://github.com/google/gson)
+
+**AndroidX Activity Compose** by **Android Open Source Project (AOSP)** - [Apache License 2.0](https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/activity-compose/NOTICE.txt): [Android Developers](https://developer.android.com/jetpack/androidx/releases/activity)
