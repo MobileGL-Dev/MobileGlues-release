@@ -85,6 +85,6 @@ We need your help to test the compatibility of shaders and mods, and a broad var
 
 **FidelityFX-FSR** by **AMD** - [MIT License](https://github.com/GPUOpen-Effects/FidelityFX-FSR/blob/master/license.txt): [github](https://github.com/GPUOpen-Effects/FidelityFX-FSR) 
 
-**Gson** by **Google** - [Apache License 2.0](https://github.com/google/gson/blob/master/LICENSE): [github](https://github.com/google/gson)
+**Gson** by **Google** - [Apache License 2.0](https://github.com/google/gson/blob/main/LICENSE): [github](https://github.com/google/gson)
 
-**AndroidX Activity Compose** by **Android Open Source Project (AOSP)** - [Apache License 2.0](https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/activity-compose/NOTICE.txt): [Android Developers](https://developer.android.com/jetpack/androidx/releases/activity)
+**AndroidX Activity Compose** by **Android Open Source Project (AOSP)** - [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt): [Android Developers](https://developer.android.com/jetpack/androidx/releases/activity)
