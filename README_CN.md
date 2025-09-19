@@ -8,7 +8,7 @@
 >
 > 最新版本：
 >
-> **1.3.0·RC1**
+> **1.3.1**
 >
 > 请查看 [Release](https://github.com/MobileGL-Dev/MobileGlues-release/releases)
 
@@ -67,14 +67,18 @@ MobileGlues 和它的插件应用程序都以 **GNU LGPL-2.1 License** 开源.
 
 # 第三方组件
 
-**SPIRV-Cross** by **KhronosGroup**：[GitHub](https://github.com/KhronosGroup/SPIRV-Cross)
+**SPIRV-Cross** by **KhronosGroup** - [Apache License 2.0](https://github.com/KhronosGroup/SPIRV-Cross/blob/master/LICENSE): [github](https://github.com/KhronosGroup/SPIRV-Cross)
 
-**glslang** by **KhronosGroup**：[GitHub](https://github.com/KhronosGroup/glslang)
+**glslang** by **KhronosGroup** - [Various Licenses](https://github.com/KhronosGroup/glslang/blob/main/LICENSE.txt): [github](https://github.com/KhronosGroup/glslang)
 
-**GlslOptimizerV2** by **aiekick**：[GitHub](https://github.com/aiekick/GlslOptimizerV2)
+**GlslOptimizerV2** by **aiekick** - [Apache License 2.0](https://github.com/aiekick/GlslOptimizerV2/blob/master/LICENSE): [github](https://github.com/aiekick/GlslOptimizerV2)
 
-**cJSON** by **DaveGamble**：[GitHub](https://github.com/DaveGamble/cJSON)
+**cJSON** by **DaveGamble** - [MIT License](https://github.com/DaveGamble/cJSON/blob/master/LICENSE): [github](https://github.com/DaveGamble/cJSON)
 
-**Gson** by **Google**：[GitHub](https://github.com/google/gson)
+**OpenGL Mathematics (*GLM*)** by **G-Truc Creation** - [The Happy Bunny License](https://github.com/g-truc/glm/blob/master/copying.txt): [github](https://github.com/g-truc/glm)
 
-**AndroidX Activity Compose** by **Android Open Source Project (AOSP)**：[Android Developers](https://developer.android.com/jetpack/androidx/releases/activity)
+**FidelityFX-FSR** by **AMD** - [MIT License](https://github.com/GPUOpen-Effects/FidelityFX-FSR/blob/master/license.txt): [github](https://github.com/GPUOpen-Effects/FidelityFX-FSR)
+
+**Gson** by **Google** - [Apache License 2.0](https://github.com/google/gson/blob/main/LICENSE): [github](https://github.com/google/gson)
+
+**AndroidX Activity Compose** by **Android Open Source Project (AOSP)** - [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt): [Android Developers](https://developer.android.com/jetpack/androidx/releases/activity)
