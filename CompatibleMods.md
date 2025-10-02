@@ -1,8 +1,11 @@
 <!-- markdownlint-disable MD033 -->
 
-> [!WARN]
+> [!WARNING]
+>
 > The compatible mods listed in this document are **based on testing results at the time** and do **not constitute any guarantee or promise**.
+>
 > Actual compatibility may vary depending on device, OpenGL ES driver, or other factors.
+>
 > No official support should be expected from the authors or developers, and all usage is at your own risk.
 
 # Compatible Mods
