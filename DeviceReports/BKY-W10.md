@@ -20,7 +20,7 @@
 | ----------------- | -------------------------- |
 | Fabric API        | ✅(0.118.0+1.21.4)         |
 | Sodium            | ✅(Fabric-0.6.10+mc1.21.4) |
-| Iris              | ️✅(Fabric-1.8.8+mc1.21.4) |
+| Iris              | ️✅(Fabric-1.8.8+mc1.21.4)  |
 | Xaero's Minimap   | ✅(25.1.0_Fabric_1.21.4)   |
 | Xaero's World Map | ✅(1.39.4_Fabric_1.21.4)   |
 

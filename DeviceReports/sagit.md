@@ -33,7 +33,7 @@
 | Physics Mod Pro             | ✅(v172b)                  |
 | Distant Horizons            | ❌(2.3.0-b)                |
 | Modern UI                   | ✅(3.11.1.9)               |
-| Immersive Portals Continued | \*️⃣(6.0.7, 无法渲染传送门)   |
+| Immersive Portals Continued | \*️⃣(6.0.7, 无法渲染传送门) |
 
 ## Shaderpack compatibility
 
