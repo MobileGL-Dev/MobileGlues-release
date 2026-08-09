@@ -132,7 +132,7 @@ We need your help to test the compatibility of shaders and mods, and a broad var
 
 # Third-party components
 
-## Used by the renderer
+## MobileGlues
 
 **SPIRV-Cross** by **KhronosGroup** - [Apache License 2.0](https://github.com/KhronosGroup/SPIRV-Cross/blob/master/LICENSE): [github](https://github.com/KhronosGroup/SPIRV-Cross)
 
@@ -148,7 +148,7 @@ We need your help to test the compatibility of shaders and mods, and a broad var
 
 **flat_hash_map** by **Malte Skarupke** - [Boost Software License 1.0](https://github.com/MobileGL-Dev/flat_hash_map/blob/master/LICENSE): [github](https://github.com/MobileGL-Dev/flat_hash_map) (a fork of [skarupke/flat_hash_map](https://github.com/skarupke/flat_hash_map), carrying a fix that lets the header be included on 32-bit targets)
 
-## Used by the plugin application
+## MobileGlues-plugin
 
 **Miuix** by **compose-miuix-ui** - [Apache License 2.0](https://github.com/compose-miuix-ui/miuix/blob/main/LICENSE): [github](https://github.com/compose-miuix-ui/miuix)
 

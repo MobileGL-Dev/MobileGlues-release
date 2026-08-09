@@ -128,7 +128,7 @@ Signer #1 certificate MD5 digest: 320ede9d22c709fe3792c804d5e00153
 
 # サードパーティコンポーネント
 
-## レンダラーが使用
+## MobileGlues
 
 **SPIRV-Cross** by **KhronosGroup** - [Apache License 2.0](https://github.com/KhronosGroup/SPIRV-Cross/blob/master/LICENSE): [github](https://github.com/KhronosGroup/SPIRV-Cross)
 
@@ -144,7 +144,7 @@ Signer #1 certificate MD5 digest: 320ede9d22c709fe3792c804d5e00153
 
 **flat_hash_map** by **Malte Skarupke** - [Boost Software License 1.0](https://github.com/MobileGL-Dev/flat_hash_map/blob/master/LICENSE): [github](https://github.com/MobileGL-Dev/flat_hash_map)（[skarupke/flat_hash_map](https://github.com/skarupke/flat_hash_map) のフォークで、32 ビット環境でもヘッダーを include できるようにする修正を含みます）
 
-## プラグイン アプリケーションが使用
+## MobileGlues-plugin
 
 **Miuix** by **compose-miuix-ui** - [Apache License 2.0](https://github.com/compose-miuix-ui/miuix/blob/main/LICENSE): [github](https://github.com/compose-miuix-ui/miuix)
 
