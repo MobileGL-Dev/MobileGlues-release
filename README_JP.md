@@ -4,11 +4,13 @@
 
 # MobileGlues
 
+**言語**: [English](README.md) | [简体中文](README_CN.md) | [繁體中文](README_CHT.md) | **日本語**
+
 > [!NOTE]
 >
 > 最新バージョン:
 >
-> **1.3.5**
+> **2.0.0**
 >
 > [リリース](https://github.com/MobileGL-Dev/MobileGlues-release/releases)を参照してください。
 
@@ -30,6 +32,42 @@
 
 3. [JourneyMap](https://teamjm.github.io/journeymap-docs/latest) や [Create](https://createmod.net) など、カスタムレンダリングルーチンを持つ一部の Minecraft MOD を動作可能。
 
+4. その他の利便性向上機能：ES ドライバーとして ANGLE を任意で使用、シェーダーパックの再読み込みを速くするシェーダーキャッシュ、Minecraft の GPU 使用率表示への対応など。
+
+# シェーダー開発者の方へ
+
+1. MobileGlues は次の処理を自動的に行います：
+   - デスクトップ GLSL から GLSL ES への変換
+   - `layout(binding)` 構文の除去
+   - version ディレクティブの処理
+   - 精度は必ず明示的に宣言してください：
+     ```glsl
+     precision highp float;
+     precision highp int;
+     ```
+
+2. MobileGlues は（V1.2.6 以降）次のマクロをシェーダーに注入します：
+   ```glsl
+   #define MG_MOBILEGLUES                   // MobileGlues 環境であることを示す
+   #define MG_MOBILEGLUES_VERSION 2000      // バージョン番号（例：2000 = V2.0.0）
+   ```
+
+   これらのマクロを使って、プラットフォーム固有の処理を書けます：
+   ```glsl
+   #ifdef MG_MOBILEGLUES
+       #if MG_MOBILEGLUES_VERSION >= 2000
+           // MobileGlues（バージョン >= V2.0.0）向けの処理
+       #else
+           // MobileGlues（バージョン < V2.0.0）向けの処理
+       #endif
+   #else
+       // ...
+   #endif
+   ```
+
+3. 問題が発生した場合：
+   - `シェーダー/プログラムのエラーを無視` を有効にし、ログ（`/sdcard/MG/latest.log`）を確認してください。
+
 # オープンソースリンク
 
 [MobileGlues](https://github.com/MobileGL-Dev/MobileGlues)
@@ -40,7 +78,28 @@
 
 MobileGlues とそのプラグイン アプリケーションは、**GNU LGPL-2.1 ライセンス** に基づくオープン ソースです。
 
-特に明記されていない限り、このリポジトリのコンテンツは [ECVL V1.0 ライセンス](https://github.com/MobileGL-Dev/MobileGlues-plugin/blob/main/LICENSE.md) の下で提供されています。
+# リリースの署名を確認する
+
+この節は、お手元の apk が MobileGlues 開発チームによる公式リリースかどうかを確認するための手引きです。
+
+Android build-tools に含まれる `apksigner` を見つけ、次のコマンドを実行してください：
+
+```bash
+apksigner verify --print-certs path/to/MobileGlues-plugin.apk
+```
+
+次のように出力されるはずです：
+
+```bash
+Signer #1 certificate DN: CN=MGDev, OU=MGDev, O=MGDev, L=Unknown, ST=Unknown, C=CN
+Signer #1 certificate SHA-256 digest: 324f4efaff81632373dec9bc714a904b64740249410b551b61805340e42ff5d5
+Signer #1 certificate SHA-1 digest: 615bc8b2741c24e7e5847b0c5c1d6816d5b0763a
+Signer #1 certificate MD5 digest: 320ede9d22c709fe3792c804d5e00153
+```
+
+`certificate DN` と `certificate digest` の部分が上記と完全に一致するか確認してください。
+
+公開鍵ファイルと照合したい場合のために、`pub.cer` と `pub.pem` も提供しています。お好みのツールで apk をこれらと照合できます。
 
 # コール・トゥ・アクション
 
@@ -69,15 +128,13 @@ MobileGlues とそのプラグイン アプリケーションは、**GNU LGPL-2.
 
 # サードパーティコンポーネント
 
+## レンダラーが使用
+
 **SPIRV-Cross** by **KhronosGroup** - [Apache License 2.0](https://github.com/KhronosGroup/SPIRV-Cross/blob/master/LICENSE): [github](https://github.com/KhronosGroup/SPIRV-Cross)
 
 **glslang** by **KhronosGroup** - [Various Licenses](https://github.com/KhronosGroup/glslang/blob/main/LICENSE.txt): [github](https://github.com/KhronosGroup/glslang)
 
-**GlslOptimizerV2** by **aiekick** - [Apache License 2.0](https://github.com/aiekick/GlslOptimizerV2/blob/master/LICENSE): [github](https://github.com/aiekick/GlslOptimizerV2)
-
 **cJSON** by **DaveGamble** - [MIT License](https://github.com/DaveGamble/cJSON/blob/master/LICENSE): [github](https://github.com/DaveGamble/cJSON)
-
-**OpenGL Mathematics (_GLM_)** by **G-Truc Creation** - [The Happy Bunny License](https://github.com/g-truc/glm/blob/master/copying.txt): [github](https://github.com/g-truc/glm)
 
 **FidelityFX-FSR** by **AMD** - [MIT License](https://github.com/GPUOpen-Effects/FidelityFX-FSR/blob/master/license.txt): [github](https://github.com/GPUOpen-Effects/FidelityFX-FSR)
 
@@ -85,6 +142,16 @@ MobileGlues とそのプラグイン アプリケーションは、**GNU LGPL-2.
 
 **xxHash** by **Yann Collet** - [BSD 2-Clause License](https://github.com/Cyan4973/xxHash/blob/dev/LICENSE): [github](https://github.com/Cyan4973/xxHash)
 
-**Gson** by **Google** - [Apache License 2.0](https://github.com/google/gson/blob/main/LICENSE): [github](https://github.com/google/gson)
+**flat_hash_map** by **Malte Skarupke** - [Boost Software License 1.0](https://github.com/MobileGL-Dev/flat_hash_map/blob/master/LICENSE): [github](https://github.com/MobileGL-Dev/flat_hash_map)（[skarupke/flat_hash_map](https://github.com/skarupke/flat_hash_map) のフォークで、32 ビット環境でもヘッダーを include できるようにする修正を含みます）
 
-**AndroidX Activity Compose** by **Android Open Source Project (AOSP)** - [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt): [Android Developers](https://developer.android.com/jetpack/androidx/releases/activity)
+## プラグイン アプリケーションが使用
+
+**Miuix** by **compose-miuix-ui** - [Apache License 2.0](https://github.com/compose-miuix-ui/miuix/blob/main/LICENSE): [github](https://github.com/compose-miuix-ui/miuix)
+
+**Jetpack Compose** by **Android Open Source Project (AOSP)** - [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt): [Android Developers](https://developer.android.com/jetpack/compose)
+
+**AndroidX** by **Android Open Source Project (AOSP)** - [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt): [Android Developers](https://developer.android.com/jetpack/androidx)
+
+**kotlinx.coroutines** by **JetBrains** - [Apache License 2.0](https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt): [github](https://github.com/Kotlin/kotlinx.coroutines)
+
+**Gson** by **Google** - [Apache License 2.0](https://github.com/google/gson/blob/main/LICENSE): [github](https://github.com/google/gson)

@@ -4,11 +4,13 @@
 
 # MobileGlues
 
+**語言**: [English](README.md) | [简体中文](README_CN.md) | **繁體中文** | [日本語](README_JP.md)
+
 > [!NOTE]
 >
 > 最新版本：
 >
-> **1.3.5**
+> **2.0.0**
 >
 > 請查看 [Release](https://github.com/MobileGL-Dev/MobileGlues-release/releases)
 
@@ -28,9 +30,45 @@
 
 2. 能夠使用 Minecraft 的 [Iris](https://github.com/IrisShaders/Iris) 模組或 [Optifine](https://optifine.net/home) 渲染大部分光影；
 
-3. 能夠兼容部分具有自定義渲染流程的 Minecraft 模組，如 [JourneyMap](https://teamjm.github.io/journeymap-docs/latest) 和 [Create](https://createmod.net)。
+3. 能夠兼容部分具有自定義渲染流程的 Minecraft 模組，如 [JourneyMap](https://teamjm.github.io/journeymap-docs/latest) 和 [Create](https://createmod.net)；
 
-# 開源連結
+4. 其他易用性特性：可選用 ANGLE 作為 ES 驅動、著色器快取以加快光影包重載、支援 Minecraft 的 GPU 佔用率顯示……以及更多。
+
+# 給光影開發者
+
+1. MobileGlues 會自動：
+   - 將桌面 GLSL 轉換為 GLSL ES
+   - 移除 `layout(binding)` 語法
+   - 處理 version 指令
+   - 請始終顯式聲明精度：
+     ```glsl
+     precision highp float;
+     precision highp int;
+     ```
+
+2. MobileGlues（自 V1.2.6 起）會向您的著色器注入以下巨集：
+   ```glsl
+   #define MG_MOBILEGLUES                   // 表示處於 MobileGlues 環境
+   #define MG_MOBILEGLUES_VERSION 2000      // 版本號（例如 2000 = V2.0.0）
+   ```
+
+   可利用這些巨集編寫平台相關的邏輯：
+   ```glsl
+   #ifdef MG_MOBILEGLUES
+       #if MG_MOBILEGLUES_VERSION >= 2000
+           // MobileGlues（版本 >= V2.0.0）的邏輯
+       #else
+           // MobileGlues（版本 < V2.0.0）的邏輯
+       #endif
+   #else
+       // ...
+   #endif
+   ```
+
+3. 若遇到問題：
+   - 請啟用 `忽略 shader/program 報錯`，並查看日誌（位於 `/sdcard/MG/latest.log`）。
+
+# 開源鏈接
 
 [MobileGlues](https://github.com/MobileGL-Dev/MobileGlues)
 
@@ -38,7 +76,30 @@
 
 # 開源許可證
 
-MobileGlues 和它的插件應用程式都以 **GNU LGPL-2.1 License** 開源.
+MobileGlues 和它的插件應用程式都以 **GNU LGPL-2.1 License** 開源。
+
+# 校驗您所下載版本的簽名
+
+本節用於幫助您確認手中的 apk 是否為 MobileGlues 開發組發布的官方版本。
+
+在您的 Android build-tools 中找到 `apksigner`，然後運行：
+
+```bash
+apksigner verify --print-certs path/to/MobileGlues-plugin.apk
+```
+
+它應當輸出：
+
+```bash
+Signer #1 certificate DN: CN=MGDev, OU=MGDev, O=MGDev, L=Unknown, ST=Unknown, C=CN
+Signer #1 certificate SHA-256 digest: 324f4efaff81632373dec9bc714a904b64740249410b551b61805340e42ff5d5
+Signer #1 certificate SHA-1 digest: 615bc8b2741c24e7e5847b0c5c1d6816d5b0763a
+Signer #1 certificate MD5 digest: 320ede9d22c709fe3792c804d5e00153
+```
+
+請檢查 `certificate DN` 與 `certificate digest` 兩部分是否與上文完全一致。
+
+如果您希望對照公鑰檔案進行校驗，我們同時提供了 `pub.cer` 與 `pub.pem`，您可以使用任何順手的工具用它們校驗您的 apk。
 
 # 加入我們
 
@@ -63,19 +124,17 @@ MobileGlues 和它的插件應用程式都以 **GNU LGPL-2.1 License** 開源.
 >   - 未測試的項目（不在您的模組包中/您未安裝該模組）標記為 ？；
 >   - 存在部分功能缺失或渲染問題的項目標記為 \*️⃣（並提交問題或提供問題鏈接）。
 > - 如適用，您可以在 "額外驅動/插件" 列中說明您使用的除官方提供之外的其他驅動或插件（如 Turnip 驅動、ANGLE 等）。
-> - 如適用，您應添加一個 `*設備代號*.md` 文件，提供更多詳細信息，並在表格的最後一列附上鏈接。
+> - 如適用，您應添加一個 `*設備代號*.md` 檔案，提供更多詳細信息，並在表格的最後一列附上鏈接。
 
 # 第三方組件
+
+## 渲染器使用
 
 **SPIRV-Cross** by **KhronosGroup** - [Apache License 2.0](https://github.com/KhronosGroup/SPIRV-Cross/blob/master/LICENSE): [github](https://github.com/KhronosGroup/SPIRV-Cross)
 
 **glslang** by **KhronosGroup** - [Various Licenses](https://github.com/KhronosGroup/glslang/blob/main/LICENSE.txt): [github](https://github.com/KhronosGroup/glslang)
 
-**GlslOptimizerV2** by **aiekick** - [Apache License 2.0](https://github.com/aiekick/GlslOptimizerV2/blob/master/LICENSE): [github](https://github.com/aiekick/GlslOptimizerV2)
-
 **cJSON** by **DaveGamble** - [MIT License](https://github.com/DaveGamble/cJSON/blob/master/LICENSE): [github](https://github.com/DaveGamble/cJSON)
-
-**OpenGL Mathematics (_GLM_)** by **G-Truc Creation** - [The Happy Bunny License](https://github.com/g-truc/glm/blob/master/copying.txt): [github](https://github.com/g-truc/glm)
 
 **FidelityFX-FSR** by **AMD** - [MIT License](https://github.com/GPUOpen-Effects/FidelityFX-FSR/blob/master/license.txt): [github](https://github.com/GPUOpen-Effects/FidelityFX-FSR)
 
@@ -83,6 +142,16 @@ MobileGlues 和它的插件應用程式都以 **GNU LGPL-2.1 License** 開源.
 
 **xxHash** by **Yann Collet** - [BSD 2-Clause License](https://github.com/Cyan4973/xxHash/blob/dev/LICENSE): [github](https://github.com/Cyan4973/xxHash)
 
-**Gson** by **Google** - [Apache License 2.0](https://github.com/google/gson/blob/main/LICENSE): [github](https://github.com/google/gson)
+**flat_hash_map** by **Malte Skarupke** - [Boost Software License 1.0](https://github.com/MobileGL-Dev/flat_hash_map/blob/master/LICENSE): [github](https://github.com/MobileGL-Dev/flat_hash_map)（[skarupke/flat_hash_map](https://github.com/skarupke/flat_hash_map) 的分支，帶有使該標頭檔可在 32 位目標上包含的修復）
 
-**AndroidX Activity Compose** by **Android Open Source Project (AOSP)** - [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt): [Android Developers](https://developer.android.com/jetpack/androidx/releases/activity)
+## 插件應用程式使用
+
+**Miuix** by **compose-miuix-ui** - [Apache License 2.0](https://github.com/compose-miuix-ui/miuix/blob/main/LICENSE): [github](https://github.com/compose-miuix-ui/miuix)
+
+**Jetpack Compose** by **Android Open Source Project (AOSP)** - [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt): [Android Developers](https://developer.android.com/jetpack/compose)
+
+**AndroidX** by **Android Open Source Project (AOSP)** - [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt): [Android Developers](https://developer.android.com/jetpack/androidx)
+
+**kotlinx.coroutines** by **JetBrains** - [Apache License 2.0](https://github.com/Kotlin/kotlinx.coroutines/blob/master/LICENSE.txt): [github](https://github.com/Kotlin/kotlinx.coroutines)
+
+**Gson** by **Google** - [Apache License 2.0](https://github.com/google/gson/blob/main/LICENSE): [github](https://github.com/google/gson)
