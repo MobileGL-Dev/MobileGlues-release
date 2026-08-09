@@ -47,12 +47,14 @@
      ```
 
 2. MobileGlues は（V1.2.6 以降）次のマクロをシェーダーに注入します：
+
    ```glsl
    #define MG_MOBILEGLUES                   // MobileGlues 環境であることを示す
    #define MG_MOBILEGLUES_VERSION 2000      // バージョン番号（例：2000 = V2.0.0）
    ```
 
    これらのマクロを使って、プラットフォーム固有の処理を書けます：
+
    ```glsl
    #ifdef MG_MOBILEGLUES
        #if MG_MOBILEGLUES_VERSION >= 2000

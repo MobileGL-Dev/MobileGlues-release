@@ -47,12 +47,14 @@
      ```
 
 2. MobileGlues（自 V1.2.6 起）會向您的著色器注入以下巨集：
+
    ```glsl
    #define MG_MOBILEGLUES                   // 表示處於 MobileGlues 環境
    #define MG_MOBILEGLUES_VERSION 2000      // 版本號（例如 2000 = V2.0.0）
    ```
 
    可利用這些巨集編寫平台相關的邏輯：
+
    ```glsl
    #ifdef MG_MOBILEGLUES
        #if MG_MOBILEGLUES_VERSION >= 2000

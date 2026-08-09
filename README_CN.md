@@ -47,12 +47,14 @@
      ```
 
 2. MobileGlues（自 V1.2.6 起）会向您的着色器注入以下宏：
+
    ```glsl
    #define MG_MOBILEGLUES                   // 表示处于 MobileGlues 环境
    #define MG_MOBILEGLUES_VERSION 2000      // 版本号（例如 2000 = V2.0.0）
    ```
 
    可利用这些宏编写平台相关的逻辑：
+
    ```glsl
    #ifdef MG_MOBILEGLUES
        #if MG_MOBILEGLUES_VERSION >= 2000

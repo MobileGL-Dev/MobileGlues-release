@@ -49,12 +49,14 @@
      ```
 
 2. MobileGlues (since V1.2.6) injects these macros into your shaders:
+
    ```glsl
    #define MG_MOBILEGLUES                   // Indicates MobileGlues environment
    #define MG_MOBILEGLUES_VERSION 2000      // Version number (e.g. 2000 = V2.0.0)
    ```
 
    Use these macros for platform-specific logic:
+
    ```glsl
    #ifdef MG_MOBILEGLUES
        #if MG_MOBILEGLUES_VERSION >= 2000
