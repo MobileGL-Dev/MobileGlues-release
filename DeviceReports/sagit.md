@@ -27,6 +27,8 @@
 | Modernfix                   | ✅(5.20.2)                 |
 | Lithium                     | ✅(0.15.0)                 |
 | Roughly Enough Items        | ✅(16.0.799)               |
+| BetterF3                    | ✅(11.0.3)                 |
+| What The Hell Is That       | ✅(12.5.1)                 |
 | Ok Zoomer                   | ✅(10.0.0-beta.8)          |
 | RyoamicLights               | ✅(0.2.11)                 |
 | TouchController             | ✅(0.1.5)                  |
